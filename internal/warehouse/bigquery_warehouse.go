@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"strings"
 
+	"github.com/hasura/go-graphql-client"
 	"github.com/kiwicom/terraform-provider-montecarlo/client"
 	"github.com/kiwicom/terraform-provider-montecarlo/internal/common"
 
@@ -321,6 +322,7 @@ func (r *BigQueryWarehouseResource) testCredentials(ctx context.Context, data Bi
 				[]byte(data.Credentials.ServiceAccountKey.ValueString()),
 			),
 		},
+		"dcId": graphql.String(data.CollectorUuid.ValueString()),
 	}
 
 	if err := r.client.Mutate(ctx, &testResult, variables); err != nil {
