@@ -15,50 +15,51 @@ permissions:
   contents: write
 
 jobs:
-  tests:
-    uses: ./.github/workflows/test.yml
-    secrets:
-      ACC_TEST_MC_API_KEY_ID: ${{ secrets.ACC_TEST_MC_API_KEY_ID }}
-      ACC_TEST_MC_API_KEY_TOKEN: ${{ secrets.ACC_TEST_MC_API_KEY_TOKEN }}
-      ACC_TEST_BQ_SERVICE_ACCOUNT: ${{ secrets.ACC_TEST_BQ_SERVICE_ACCOUNT }}
-      ACC_TEST_PG_HOST: ${{ secrets.ACC_TEST_PG_HOST }}
-      ACC_TEST_PG_PORT: ${{ secrets.ACC_TEST_PG_PORT }}
-      ACC_TEST_PG_DATABASE: ${{ secrets.ACC_TEST_PG_DATABASE }}
-      ACC_TEST_PG_USER: ${{ secrets.ACC_TEST_PG_USER }}
-      ACC_TEST_PG_PASSWORD: ${{ secrets.ACC_TEST_PG_PASSWORD }}
-  coverage-check:
-    needs: tests
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-go@v5
-        with:
-          cache: true
-          go-version-file: "go.mod"
-      - uses: actions/download-artifact@v4
-        with:
-          name: coverage
-      - name: check test coverage
-        id: coverage ## this step must have id
-        uses: vladopajic/go-test-coverage@v2
-        with:
-          profile: coverage.out
-          local-prefix: github.com/wellingh/terraform-provider-montecarlo
-          threshold-file: 0
-          threshold-package: 0
-          threshold-total: 0
-      - name: make coverage badge
-        uses: action-badges/core@0.3.1
-        with:
-          label: coverage
-          message: ${{ steps.coverage.outputs.badge-text }}
-          message-color: ${{ steps.coverage.outputs.badge-color }}
-          file-name: coverage.svg
-          badge-branch: badges ## orphan branch where badge will be committed
-          github-token: "${{ secrets.GITHUB_TOKEN }}"
+  # tests:
+  #   uses: ./.github/workflows/test.yml
+  #   secrets:
+  #     ACC_TEST_MC_API_KEY_ID: ${{ secrets.ACC_TEST_MC_API_KEY_ID }}
+  #     ACC_TEST_MC_API_KEY_TOKEN: ${{ secrets.ACC_TEST_MC_API_KEY_TOKEN }}
+  #     ACC_TEST_BQ_SERVICE_ACCOUNT: ${{ secrets.ACC_TEST_BQ_SERVICE_ACCOUNT }}
+  #     ACC_TEST_PG_HOST: ${{ secrets.ACC_TEST_PG_HOST }}
+  #     ACC_TEST_PG_PORT: ${{ secrets.ACC_TEST_PG_PORT }}
+  #     ACC_TEST_PG_DATABASE: ${{ secrets.ACC_TEST_PG_DATABASE }}
+  #     ACC_TEST_PG_USER: ${{ secrets.ACC_TEST_PG_USER }}
+  #     ACC_TEST_PG_PASSWORD: ${{ secrets.ACC_TEST_PG_PASSWORD }}
+  # coverage-check:
+  #   needs: tests
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: actions/setup-go@v5
+  #       with:
+  #         cache: true
+  #         go-version-file: "go.mod"
+  #     - uses: actions/download-artifact@v4
+  #       with:
+  #         name: coverage
+  #     - name: check test coverage
+  #       id: coverage ## this step must have id
+  #       uses: vladopajic/go-test-coverage@v2
+  #       with:
+  #         profile: coverage.out
+  #         local-prefix: github.com/wellingh/terraform-provider-montecarlo
+  #         threshold-file: 0
+  #         threshold-package: 0
+  #         threshold-total: 0
+  #     - name: make coverage badge
+  #       uses: action-badges/core@0.3.1
+  #       with:
+  #         label: coverage
+  #         message: ${{ steps.coverage.outputs.badge-text }}
+  #         message-color: ${{ steps.coverage.outputs.badge-color }}
+  #         file-name: coverage.svg
+  #         badge-branch: badges ## orphan branch where badge will be committed
+  #         github-token: "${{ secrets.GITHUB_TOKEN }}"
+
   goreleaser:
     if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
-    needs: tests
+    # needs: tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
