@@ -70,12 +70,12 @@ jobs:
         with:
           cache: true
           go-version-file: "go.mod"
-      - name: Generate Release Notes
-        run: |
-          export CURR_TAG=$(git describe --tags --abbrev=0)
-          sed -n '/<a name="'$CURR_TAG'"><\/a>/,/<a name="v/p' CHANGELOG.md | sed '$d' > release-notes.md
-          sed -i '/^## '$CURR_TAG'$/d' release-notes.md
-          grep '<a name="'$CURR_TAG'"></a>' release-notes.md
+      # - name: Generate Release Notes
+      #   run: |
+      #     export CURR_TAG=$(git describe --tags --abbrev=0)
+      #     sed -n '/<a name="'$CURR_TAG'"><\/a>/,/<a name="v/p' CHANGELOG.md | sed '$d' > release-notes.md
+      #     sed -i '/^## '$CURR_TAG'$/d' release-notes.md
+      #     grep '<a name="'$CURR_TAG'"></a>' release-notes.md
       - name: Import GPG key
         uses: crazy-max/ghaction-import-gpg@v6
         id: import_gpg
@@ -87,7 +87,8 @@ jobs:
         with:
           distribution: goreleaser
           version: latest
-          args: release --clean --release-notes release-notes.md
+          args: release --clean
+          # args: release --clean --release-notes release-notes.md
         env:
           # GitHub sets the GITHUB_TOKEN secret automatically.
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
