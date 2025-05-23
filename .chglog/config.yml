@@ -2,23 +2,23 @@ style: github
 template: CHANGELOG.tpl.md
 info:
   title: CHANGELOG
-  repository_url: https://github.com/kiwicom/terraform-provider-montecarlo
+  repository_url: https://github.com/wellingh/terraform-provider-montecarlo
 options:
   commits:
-     filters:
-       Type:
-         - feat
-         - fix
-         - perf
-         - docs
-         - test
+    filters:
+      Type:
+        - feat
+        - fix
+        - perf
+        - docs
+        - test
   commit_groups:
-     title_maps:
-       feat: ":sparkles: Features"
-       fix: ":bug: Bug Fixes"
-       perf: ":zap: Performance Improvements"
-       docs: ":books: Documentation (unchanged functionality)"
-       test: ":mag: Tests (unchanged functionality)"
+    title_maps:
+      feat: ":sparkles: Features"
+      fix: ":bug: Bug Fixes"
+      perf: ":zap: Performance Improvements"
+      docs: ":books: Documentation (unchanged functionality)"
+      test: ":mag: Tests (unchanged functionality)"
   header:
     pattern: "^(\\w*)(?:\\(([\\w\\$\\.\\-\\*\\s\\:\\|\\-]*)\\))?\\:\\s(.*)$"
     pattern_maps:

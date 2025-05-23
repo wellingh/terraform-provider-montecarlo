@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"slices"
 
-	"github.com/kiwicom/terraform-provider-montecarlo/client"
-	"github.com/kiwicom/terraform-provider-montecarlo/internal/common"
+	"github.com/wellingh/terraform-provider-montecarlo/client"
+	"github.com/wellingh/terraform-provider-montecarlo/internal/common"
 
 	"github.com/hashicorp/terraform-plugin-framework/resource"
 	"github.com/hashicorp/terraform-plugin-framework/resource/schema"

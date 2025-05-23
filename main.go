@@ -5,7 +5,7 @@ import (
 	"flag"
 	"log"
 
-	"github.com/kiwicom/terraform-provider-montecarlo/internal"
+	"github.com/wellingh/terraform-provider-montecarlo/internal"
 
 	"github.com/hashicorp/terraform-plugin-framework/providerserver"
 )
@@ -22,7 +22,7 @@ var (
 
 func main() {
 	flag.Parse()
-	opts := providerserver.ServeOpts{Address: "registry.terraform.io/kiwicom/montecarlo", Debug: false}
+	opts := providerserver.ServeOpts{Address: "registry.terraform.io/wellingh/montecarlo", Debug: false}
 	if err := providerserver.Serve(context.Background(), internal.New(version), opts); err != nil {
 		log.Fatal(err.Error())
 	}

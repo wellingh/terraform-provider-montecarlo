@@ -5,8 +5,8 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/kiwicom/terraform-provider-montecarlo/client"
-	"github.com/kiwicom/terraform-provider-montecarlo/internal/common"
+	"github.com/wellingh/terraform-provider-montecarlo/client"
+	"github.com/wellingh/terraform-provider-montecarlo/internal/common"
 
 	"github.com/hashicorp/terraform-plugin-framework-validators/resourcevalidator"
 	"github.com/hashicorp/terraform-plugin-framework/attr"
@@ -84,7 +84,7 @@ func (r *DomainResource) Schema(ctx context.Context, req resource.SchemaRequest,
 					types.SetValueMust(
 						types.ObjectType{
 							AttrTypes: map[string]attr.Type{
-								"name": types.StringType,
+								"name":  types.StringType,
 								"value": types.StringType,
 							},
 						},

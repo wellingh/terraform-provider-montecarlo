@@ -4,10 +4,10 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/kiwicom/terraform-provider-montecarlo/client"
-	"github.com/kiwicom/terraform-provider-montecarlo/internal/authorization"
-	"github.com/kiwicom/terraform-provider-montecarlo/internal/common"
-	"github.com/kiwicom/terraform-provider-montecarlo/internal/warehouse"
+	"github.com/wellingh/terraform-provider-montecarlo/client"
+	"github.com/wellingh/terraform-provider-montecarlo/internal/authorization"
+	"github.com/wellingh/terraform-provider-montecarlo/internal/common"
+	"github.com/wellingh/terraform-provider-montecarlo/internal/warehouse"
 
 	"github.com/hashicorp/terraform-plugin-framework/datasource"
 	"github.com/hashicorp/terraform-plugin-framework/provider"

@@ -3,7 +3,7 @@ package common
 import (
 	"fmt"
 
-	"github.com/kiwicom/terraform-provider-montecarlo/client"
+	"github.com/wellingh/terraform-provider-montecarlo/client"
 
 	"github.com/hashicorp/terraform-plugin-framework/datasource"
 	"github.com/hashicorp/terraform-plugin-framework/diag"

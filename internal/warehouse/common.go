@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/kiwicom/terraform-provider-montecarlo/client"
+	"github.com/wellingh/terraform-provider-montecarlo/client"
 
 	"github.com/hashicorp/terraform-plugin-framework/diag"
 	"github.com/hashicorp/terraform-plugin-framework/types"

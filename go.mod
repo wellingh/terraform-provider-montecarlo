@@ -1,4 +1,4 @@
-module github.com/kiwicom/terraform-provider-montecarlo
+module github.com/wellingh/terraform-provider-montecarlo
 
 go 1.22.0
 

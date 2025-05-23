@@ -7,8 +7,8 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/kiwicom/terraform-provider-montecarlo/client"
-	"github.com/kiwicom/terraform-provider-montecarlo/internal/common"
+	"github.com/wellingh/terraform-provider-montecarlo/client"
+	"github.com/wellingh/terraform-provider-montecarlo/internal/common"
 
 	"github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
 	"github.com/hashicorp/terraform-plugin-framework/path"
@@ -211,7 +211,7 @@ func (r *IamMemberResource) Read(ctx context.Context, req resource.ReadRequest, 
 func (r *IamMemberResource) Update(ctx context.Context, req resource.UpdateRequest, resp *resource.UpdateResponse) {
 	resp.Diagnostics.AddError(
 		"Resource 'montecarlo_iam_member' does not support updates",
-		"If you encounter this error please raise a issue at 'https://github.com/kiwicom/terraform-provider-montecarlo'",
+		"If you encounter this error please raise a issue at 'https://github.com/wellingh/terraform-provider-montecarlo'",
 	)
 }
 

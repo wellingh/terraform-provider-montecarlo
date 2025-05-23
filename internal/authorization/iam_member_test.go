@@ -4,7 +4,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/kiwicom/terraform-provider-montecarlo/internal/acctest"
+	"github.com/wellingh/terraform-provider-montecarlo/internal/acctest"
 
 	"github.com/hashicorp/terraform-plugin-testing/config"
 	"github.com/hashicorp/terraform-plugin-testing/helper/resource"

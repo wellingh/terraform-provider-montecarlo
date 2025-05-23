@@ -4,7 +4,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/kiwicom/terraform-provider-montecarlo/internal"
+	"github.com/wellingh/terraform-provider-montecarlo/internal"
 
 	"github.com/hashicorp/terraform-plugin-framework/providerserver"
 	"github.com/hashicorp/terraform-plugin-go/tfprotov6"

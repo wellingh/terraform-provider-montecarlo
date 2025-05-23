@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/kiwicom/terraform-provider-montecarlo/client"
-	"github.com/kiwicom/terraform-provider-montecarlo/internal/common"
+	"github.com/wellingh/terraform-provider-montecarlo/client"
+	"github.com/wellingh/terraform-provider-montecarlo/internal/common"
 
 	"github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
 	"github.com/hashicorp/terraform-plugin-framework/diag"
