@@ -4,8 +4,7 @@
 ##   "mcd/responder"
 ##   "mcd/editor"
 ##   "mcd/viewer"
-##   "mcd/asset-viewer"
-##   "mcd/asset-editor"
+##   "mcd/monitor-editor"
 
 resource "montecarlo_iam_group" "example_thin" {
   name        = "name"

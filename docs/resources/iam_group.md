@@ -52,8 +52,7 @@ Allowed roles:
   - **mcd/responder**
   - **mcd/editor**
   - **mcd/viewer**
-  - **mcd/asset-viewer**
-  - **mcd/asset-editor**
+  - **mcd/monitor-editor**
 
 ### Optional
 
